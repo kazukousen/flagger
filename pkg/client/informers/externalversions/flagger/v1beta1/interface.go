@@ -28,6 +28,8 @@ type Interface interface {
 	AlertProviders() AlertProviderInformer
 	// Canaries returns a CanaryInformer.
 	Canaries() CanaryInformer
+	// CanaryFilters returns a CanaryFilterInformer.
+	CanaryFilters() CanaryFilterInformer
 	// MetricTemplates returns a MetricTemplateInformer.
 	MetricTemplates() MetricTemplateInformer
 }
@@ -51,6 +53,11 @@ func (v *version) AlertProviders() AlertProviderInformer {
 // Canaries returns a CanaryInformer.
 func (v *version) Canaries() CanaryInformer {
 	return &canaryInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// CanaryFilters returns a CanaryFilterInformer.
+func (v *version) CanaryFilters() CanaryFilterInformer {
+	return &canaryFilterInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }
 
 // MetricTemplates returns a MetricTemplateInformer.

@@ -22,4 +22,6 @@ type AlertProviderExpansion interface{}
 
 type CanaryExpansion interface{}
 
+type CanaryFilterExpansion interface{}
+
 type MetricTemplateExpansion interface{}

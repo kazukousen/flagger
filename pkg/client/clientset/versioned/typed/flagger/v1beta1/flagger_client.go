@@ -28,6 +28,7 @@ type FlaggerV1beta1Interface interface {
 	RESTClient() rest.Interface
 	AlertProvidersGetter
 	CanariesGetter
+	CanaryFiltersGetter
 	MetricTemplatesGetter
 }
 
@@ -42,6 +43,10 @@ func (c *FlaggerV1beta1Client) AlertProviders(namespace string) AlertProviderInt
 
 func (c *FlaggerV1beta1Client) Canaries(namespace string) CanaryInterface {
 	return newCanaries(c, namespace)
+}
+
+func (c *FlaggerV1beta1Client) CanaryFilters(namespace string) CanaryFilterInterface {
+	return newCanaryFilters(c, namespace)
 }
 
 func (c *FlaggerV1beta1Client) MetricTemplates(namespace string) MetricTemplateInterface {

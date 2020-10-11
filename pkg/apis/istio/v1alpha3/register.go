@@ -32,6 +32,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&VirtualServiceList{},
 		&DestinationRule{},
 		&DestinationRuleList{},
+		&EnvoyFilter{},
+		&EnvoyFilterList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

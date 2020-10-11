@@ -34,6 +34,14 @@ type CanaryListerExpansion interface{}
 // CanaryNamespaceLister.
 type CanaryNamespaceListerExpansion interface{}
 
+// CanaryFilterListerExpansion allows custom methods to be added to
+// CanaryFilterLister.
+type CanaryFilterListerExpansion interface{}
+
+// CanaryFilterNamespaceListerExpansion allows custom methods to be added to
+// CanaryFilterNamespaceLister.
+type CanaryFilterNamespaceListerExpansion interface{}
+
 // MetricTemplateListerExpansion allows custom methods to be added to
 // MetricTemplateLister.
 type MetricTemplateListerExpansion interface{}

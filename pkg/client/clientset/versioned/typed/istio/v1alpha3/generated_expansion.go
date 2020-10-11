@@ -20,4 +20,6 @@ package v1alpha3
 
 type DestinationRuleExpansion interface{}
 
+type EnvoyFilterExpansion interface{}
+
 type VirtualServiceExpansion interface{}

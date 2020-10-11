@@ -36,6 +36,10 @@ func (c *FakeFlaggerV1beta1) Canaries(namespace string) v1beta1.CanaryInterface 
 	return &FakeCanaries{c, namespace}
 }
 
+func (c *FakeFlaggerV1beta1) CanaryFilters(namespace string) v1beta1.CanaryFilterInterface {
+	return &FakeCanaryFilters{c, namespace}
+}
+
 func (c *FakeFlaggerV1beta1) MetricTemplates(namespace string) v1beta1.MetricTemplateInterface {
 	return &FakeMetricTemplates{c, namespace}
 }
