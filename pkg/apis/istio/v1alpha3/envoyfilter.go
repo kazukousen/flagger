@@ -95,26 +95,26 @@ type EnvoyFilterProxyMatch struct {
 }
 
 type ListenerMatch struct {
-	PortNumber uint32                         `json:"port_number,omitempty"`
-	PortName   string                         `json:"port_name,omitempty"`
-	FilterChan *ListenerMatchFilterChainMatch `json:"filter_chain,omitempty"`
+	PortNumber uint32            `json:"port_number,omitempty"`
+	PortName   string            `json:"port_name,omitempty"`
+	FilterChan *FilterChainMatch `json:"filter_chain,omitempty"`
 }
 
-type EnvoyFilterListenerMatchFilterChainMatch struct {
-	Name   string                    `json:"name,omitempty"`
-	Sni    string                    `json:"sni,omitempty"`
-	Filter *ListenerMatchFilterMatch `json:"filter,omitempty"`
+type FilterChainMatch struct {
+	Name   string       `json:"name,omitempty"`
+	Sni    string       `json:"sni,omitempty"`
+	Filter *FilterMatch `json:"filter,omitempty"`
 }
 
-type ListenerMatchFilterMatch struct {
+type FilterMatch struct {
 	// The filter name to match on.
 	Name string `json:"name,omitempty"`
 
 	// Typically used for HTTP Connection Manager filters and Thrift filters.
-	SubFilter *ListenerMatchSubFilterMatch `json:"sub_filter,omitempty"`
+	SubFilter *SubFilterMatch `json:"sub_filter,omitempty"`
 }
 
-type ListenerMatchSubFilterMatch struct {
+type SubFilterMatch struct {
 	// The filter name to match on.
 	Name string `json:"name,omitempty"`
 }
